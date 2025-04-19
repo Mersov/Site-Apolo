@@ -1,14 +1,18 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "../../pages/home/home";
-import HB20 from "../../pages/carros/hb20";
+import NossosAutos from "../../pages/home/nossos-autos";
+import FaleConosco from "../../pages/home/fale-conosco";
+import SobreNos from "../../pages/home/sobre-nos";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
-        {/* Certifique-se de que o componente Home está funcionando corretamente */}
         <Route path="/" element={<Home />} />
-        <Route path="/hb20" element={<HB20 />} />
+        <Route path="/nossos-autos" element={<NossosAutos />} />
+        <Route path="/fale-conosco" element={<FaleConosco />} />
+        <Route path="/sobre-nos" element={<SobreNos />} />
+        {/* Adicione outras rotas aqui, se necessário */}
       </Routes>
     </Router>
   );
