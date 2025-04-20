@@ -1,18 +1,46 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "../../pages/home/home";
-import NossosAutos from "../../pages/home/nossos-autos";
-import FaleConosco from "../../pages/home/fale-conosco";
-import SobreNos from "../../pages/home/sobre-nos";
+import FaleConosco from "../../presentation/pages/Fale-conosco/fale-conosco";
+import Home from "../../presentation/pages/home/home";
+import NossosAutos from "../../presentation/pages/Nossos-autos/nossos-autos";
+import SobreNos from "../../presentation/pages/Sobre-nos/sobre-nos";
+import NavBarFactory from "../factories/components/NavBar";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/nossos-autos" element={<NossosAutos />} />
-        <Route path="/fale-conosco" element={<FaleConosco />} />
-        <Route path="/sobre-nos" element={<SobreNos />} />
-        {/* Adicione outras rotas aqui, se necessário */}
+        <Route
+          path="/"
+          element={
+            <NavBarFactory>
+              <Home />
+            </NavBarFactory>
+          }
+        />
+        <Route
+          path="/nossos-autos"
+          element={
+            <NavBarFactory>
+              <NossosAutos />
+            </NavBarFactory>
+          }
+        />
+        <Route
+          path="/fale-conosco"
+          element={
+            <NavBarFactory>
+              <FaleConosco />
+            </NavBarFactory>
+          }
+        />
+        <Route
+          path="/sobre-nos"
+          element={
+            <NavBarFactory>
+              <SobreNos />
+            </NavBarFactory>
+          }
+        />
       </Routes>
     </Router>
   );
